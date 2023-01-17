@@ -1,0 +1,80 @@
+#auth-form {
+    margin: 50px auto;
+    width: 300px;
+    text-align: center;
+  }
+  
+  #auth-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  #auth-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #auth-submit-btn {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #register-btn {
+    width: 100%;
+    background-color: #f44336;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .conversation-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .conversation-history {
+    padding: 20px;
+    overflow-y: scroll;
+    max-height: 400px;
+  }
+  
+  .conversation-input-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .conversation-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .conversation-submit-btn {
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

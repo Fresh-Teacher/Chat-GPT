@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatGPT AI Educational Website</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="conversation-container">
+    <div class="conversation-history">
+      <!-- display previous questions and answers here -->
+    </div>
+    <form id="auth-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit" id="auth-submit-btn">Sign In</button>
+        <button type="button" id="register-btn" onclick="register()">Register</button>
+      </form>
+      
+      <script>
+        function register() {
+          // Redirect the user to the OpenAI registration page
+          window.location.href = "https://beta.openai.com/signup";
+        }
+      
+        document.getElementById("auth-form").onsubmit = function(event) {
+          event.preventDefault();
+          // Get the user's email and password
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+      
+          // Send a request to the OpenAI authentication endpoint
+          fetch("https://beta.openai.com/auth/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              "email": email,
+              "password": password
+            })
+          })
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            // check if the response has an access token
+            if (data.access_token) {
+              // Save the access token to local storage or a cookie
+              localStorage.setItem("access_token", data.access_token);
+              // redirect the user to the conversation screen
+              window.location.href = "conversation.html";
+            } else {
+              // Handle the error, the response should contain an error message
+              alert(data.error);
+            }
+          })
+          .catch(function(error) {
+            console.error("Error:", error);
+            alert("An error occurred. Please try again.");
+          });
+        }
+      </script>
+      
+</body>
+</html>
